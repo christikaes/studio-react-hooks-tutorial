@@ -3,12 +3,14 @@ import './App.css';
 import { TextPanel } from './components/TextPanel';
 import { Canvas } from './components/Canvas';
 import { PirateHook } from './components/PirateHook';
+import { useMousePosition } from './mousePositionHook';
 
 function App() {
   const initialTextFields = () => {
     return JSON.parse(window.localStorage.getItem('studio-text')) || [];
   };
   const [textFields, setTextFields] = useState(initialTextFields);
+  const mousePosition = useMousePosition();
 
   useEffect(() => {
     window.localStorage.setItem('studio-text', JSON.stringify(textFields));
@@ -38,21 +40,6 @@ function App() {
     const newTextFields = [...textFields, defaultTextField];
     setTextFields(newTextFields);
   }
-
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    window.addEventListener('mousemove', e => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY
-      });
-    });
-
-    return () => {
-      window.removeEventListener('mousemove');
-    };
-  }, []);
 
   return (
     <div className="App">
