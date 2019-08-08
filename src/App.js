@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { TextPanel } from './components/TextPanel';
 import { Canvas } from './components/Canvas';
 
 function App() {
-  const textFields = [
+  const initialTextFields = [
     {
       id: '1',
       text: 'Hello World!',
@@ -28,10 +28,14 @@ function App() {
     }
   ];
 
+  const [textFields, setTextFields] = useState(initialTextFields);
+
   function onEditTextField(id, newTextField) {
-    console.log(
-      `Edit TextField ID: ${id}, value: ${JSON.stringify(newTextField)}`
-    );
+    const newTextFields = [
+      ...textFields.filter(textField => textField.id !== id),
+      newTextField
+    ];
+    setTextFields(newTextFields);
   }
 
   function onDeleteTextField(id) {
