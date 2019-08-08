@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { TextPanel } from './components/TextPanel';
 import { Canvas } from './components/Canvas';
+import { PirateHook } from './components/PirateHook';
 
 function App() {
   const initialTextFields = () => {
@@ -38,6 +39,21 @@ function App() {
     setTextFields(newTextFields);
   }
 
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    window.addEventListener('mousemove', e => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY
+      });
+    });
+
+    return () => {
+      window.removeEventListener('mousemove');
+    };
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">React Hooks Studio</header>
@@ -50,6 +66,7 @@ function App() {
         />
         <Canvas textFields={textFields} />
       </main>
+      <PirateHook x={mousePosition.x} y={mousePosition.y} />
     </div>
   );
 }
