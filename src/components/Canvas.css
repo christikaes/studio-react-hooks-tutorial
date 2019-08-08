@@ -1,0 +1,30 @@
+.canvas {
+  background-color: lightblue;
+  background: url('https://raw.githubusercontent.com/christikaes/StudioReduxExample/master/design.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  color: #fff;
+  height: 352px;
+  margin: auto;
+  margin-top: 30px;
+  padding: 20px;
+  width: 600px;
+  text-align: right;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.textfield.isBold {
+  font-weight: bold;
+}
+.textfield.isItalic {
+  font-style: italic;
+}
+.textfield.isUnderlined {
+  text-decoration: underline;
+}
+.textfield {
+  margin: 10px;
+}

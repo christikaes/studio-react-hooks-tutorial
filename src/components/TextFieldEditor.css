@@ -1,0 +1,63 @@
+.textfield-editor {
+  box-sizing: border-box;
+  border-radius: 3px;
+  box-shadow: 0px 2px 4px 1px #cccccc;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+input.text-input {
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 10px 5px;
+  border: 1px #ccc solid;
+  width: 100%;
+}
+.toggle-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  border: 1px #aaa solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.toggle-button:hover {
+  background: #efefef;
+}
+
+input[type='checkbox']:checked + .toggle-button {
+  background-color: #ccc;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italicize {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.tools {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+}
+
+.delete {
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-variant: small-caps;
+}

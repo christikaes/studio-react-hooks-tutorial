@@ -1,0 +1,27 @@
+.textPanel {
+  width: 300px;
+  min-height: 100vh;
+  padding: 30px;
+  box-shadow: 0px 2px 4px 1px #cccccc;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-textfield-btn {
+  border: 0;
+  border-radius: 3px;
+  background-color: #282c34;
+  padding: 8px 0;
+  width: 100%;
+  margin-bottom: 20px;
+  border-style: solid;
+  box-shadow: 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-style: normal;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0px 2px 4px 1px #cccccc;
+  font-variant: small-caps;
+  font-size: 16px;
+}

@@ -1,0 +1,30 @@
+.pirate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background: url('https://i.pinimg.com/originals/20/e9/50/20e950159bc3f710a9ce003dd9cf7b8d.png');
+  background-size: contain;
+}
+
+.pirate-hook-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.pirate-hook {
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  pointer-events: none;
+  background: url('https://static.thenounproject.com/png/1272818-200.png');
+  background-size: contain;
+  transform: rotateZ(125deg);
+  margin-top: -20px;
+  margin-left: -20px;
+}
