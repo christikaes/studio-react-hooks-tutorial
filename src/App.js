@@ -39,7 +39,8 @@ function App() {
   }
 
   function onDeleteTextField(id) {
-    console.log(`Delete Textfield ID: ${id}`);
+    const newTextFields = textFields.filter(textField => textField.id !== id);
+    setTextFields(newTextFields);
   }
 
   function onAddTextField() {
@@ -50,7 +51,8 @@ function App() {
       isItalic: false,
       isUnderlined: false
     };
-    console.log(`Add TextField: ${JSON.stringify(defaultTextField)}`);
+    const newTextFields = [...textFields, defaultTextField];
+    setTextFields(newTextFields);
   }
 
   return (
