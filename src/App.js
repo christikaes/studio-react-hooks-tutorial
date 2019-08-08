@@ -1,34 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { TextPanel } from './components/TextPanel';
 import { Canvas } from './components/Canvas';
 
 function App() {
-  const initialTextFields = [
-    {
-      id: '1',
-      text: 'Hello World!',
-      isBold: true,
-      isItalic: true,
-      isUnderlined: true
-    },
-    {
-      id: '2',
-      text: 'Welcome to react hooks!',
-      isBold: true,
-      isItalic: false,
-      isUnderlined: false
-    },
-    {
-      id: '3',
-      text: 'Get ready to get HOOOOKED!',
-      isBold: false,
-      isItalic: false,
-      isUnderlined: true
-    }
-  ];
-
+  const initialTextFields = () => {
+    return JSON.parse(window.localStorage.getItem('studio-text')) || [];
+  };
   const [textFields, setTextFields] = useState(initialTextFields);
+
+  useEffect(() => {
+    window.localStorage.setItem('studio-text', JSON.stringify(textFields));
+  }, [textFields]);
 
   function onEditTextField(id, newTextField) {
     const newTextFields = [
